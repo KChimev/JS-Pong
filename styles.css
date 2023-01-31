@@ -7,6 +7,8 @@
   --saturation: 50%;
   --foreground-color: hsl(var(--hue), var(--saturation), 75%);
   --background-color: hsl(var(--hue), var(--saturation), 20%);
+  --display:none;
+  --window-width:50vw;
 }
 
 body {
@@ -14,10 +16,54 @@ body {
   background-color: var(--background-color);
   overflow: hidden;
 }
-
+#game-menu{
+  position: absolute;
+  width: 20vw;
+  height: 60vh;
+  background-color: var(--background-color);
+  top:20%;
+  left:40%;
+  border-radius: 3vw;
+  border:.4vw solid var(--foreground-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.non-selected-btn{
+  text-align: center;
+  padding: 0;
+  width: 50%;
+  border: none;
+  font-size: 2vw;
+  font-weight: bold;
+  border: .2vw solid var(--foreground-color);
+  border-radius: 2vw;
+  background-color: var(--background-color);
+  color:var(--foreground-color);
+}
+#start-btn:hover,#hard-btn:hover,#medium-btn:hover,#easy-btn:hover{
+  background-color: var(--foreground-color);
+  color: var(--background-color);
+}
+.selected-btn{
+  text-align: center;
+  padding: 0;
+  width: 50%;
+  border: none;
+  font-size: 2vw;
+  font-weight: bold;
+  border: .2vw solid var(--foreground-color);
+  border-radius: 2vw;
+  background-color: var(--foreground-color);
+  color: var(--background-color);
+}
+#start-btn:active,#hard-btn:active,#medium-btn:active,#easy-btn:active{
+  scale:.97;
+}
 .paddle {
   --position: 50;
-
   position: absolute;
   background-color: var(--foreground-color);
   top: calc(var(--position) * 1vh);
@@ -37,7 +83,6 @@ body {
 .ball {
   --x: 50;
   --y: 50;
-
   position: absolute;
   background-color: var(--foreground-color);
   left: calc(var(--x) * 1vw);

@@ -1,6 +1,5 @@
 const INITIAL_VELOCITY = 0.045
 const VELOCITY_INCREASE = 0.000005
-
 export default class Ball {
   constructor(ballElem) {
     this.ballElem = ballElem
@@ -18,11 +17,16 @@ export default class Ball {
   get y() {
     return parseFloat(getComputedStyle(this.ballElem).getPropertyValue("--y"))
   }
-
   set y(value) {
     this.ballElem.style.setProperty("--y", value)
   }
-
+  
+  get display(){
+    return getComputedStyle(this.ballElem).getPropertyValue("display")
+  }
+  set display(display){
+    this.ballElem.style.setProperty("display", display)
+  }
   rect() {
     return this.ballElem.getBoundingClientRect()
   }

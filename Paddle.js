@@ -1,4 +1,4 @@
-const PADDLE_SPEED=.014
+import {PADDLE_SPEED as PADDLE_SPEED} from "./script.js"
 export default class Paddle {
   constructor(paddleElem) {
     this.paddleElem = paddleElem
@@ -15,7 +15,9 @@ export default class Paddle {
   }
   update(delta,ballHeight) {
     this.position += (ballHeight-this.position) * delta*PADDLE_SPEED 
+    console.log(PADDLE_SPEED)
   }
+
   rects(){
     return this.paddleElem.getBoundingClientRect()
   }
